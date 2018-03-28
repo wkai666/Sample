@@ -5,7 +5,7 @@
 	<div class="jumbotron">
 		<h1>welcome to laravel</h1>
 		<p class="lead">
-			你现在看到的是： <a href="#">哈哈哈</a>
+			你现在看到的是： <a href="#">Laravel</a>
 		</p>
 		<p>一切，将从这里开始</p>
 		<p><a href="{{ route('signup') }}" class="btn btn-lg btn-success">现在注册</a></p>

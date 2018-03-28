@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function gravatar($size="100"){
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "http://www.gravatar.com/userimage/137012254/686742161efca97a00dc208dced7dab4.jpeg";
+    }
 }
