@@ -140,7 +140,6 @@ section.user_info {
   .gravatar {
     float: none;
     max-width: 70px;
-    margin-left:130px;
   }
   h1 {
     font-size: 1.4em;
@@ -152,7 +151,6 @@ section.user_info {
 
 .gravatar {
   float: left;
-  margin-left:130px;
   margin-right: 10px;
   max-width: 50px;
   border-radius: 50%;
@@ -172,4 +170,12 @@ input {
 .panel {
   margin-top: 50px;
 }
+
+.logout{
+  cursor: default;
+  &:hover{
+    background-color: transparent;
+  }
+}
+
 
