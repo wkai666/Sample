@@ -94,8 +94,8 @@ class UsersController extends Controller
     public function sendEmailConfirmationTo($user){
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = '1973250909@qq.com';
-        $name = 'wkai666';
+        //$from = '1973250909@qq.com';
+        //$name = 'wkai666';
         $to = $user->email;
         $subject = '感谢注册 Sample 应用！请确认你的邮箱！';
 
