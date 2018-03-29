@@ -28,7 +28,10 @@ class UsersController extends Controller
     }
     //展示用户信息
     public function show(User $user){
-    	return view('users.show', compact('user'));
+        $statuses = $user->statuses()
+                         ->orderBy('created_at', 'desc')
+                         ->paginate(30);
+    	return view('users.show', compact('user', 'statuses'));
     }
     //用户注册提交
     public function store(Request $request){
@@ -94,8 +97,8 @@ class UsersController extends Controller
     public function sendEmailConfirmationTo($user){
         $view = 'emails.confirm';
         $data = compact('user');
-        //$from = '1973250909@qq.com';
-        //$name = 'wkai666';
+        $from = '1973250909@qq.com';
+        $name = 'wkai666';
         $to = $user->email;
         $subject = '感谢注册 Sample 应用！请确认你的邮箱！';
 
@@ -115,7 +118,6 @@ class UsersController extends Controller
         session()->flash('success', '恭喜你，邮箱激活成功！');
         return redirect()->route('user.show', [$user]);
     }
-
 
 
 }
